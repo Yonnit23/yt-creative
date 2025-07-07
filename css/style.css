@@ -464,6 +464,13 @@ body.portfolio-page {
   border-color: #fff;
 }
 
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   .editorial-content,
@@ -474,15 +481,7 @@ body.portfolio-page {
 
   .navbar {
     flex-wrap: wrap;
-    padding: 20px 20px;
-  }
-
-  .nav-left,
-  .nav-right {
-    flex: unset;
-    width: 100%;
-    justify-content: center;
-    margin: 5px 0;
+    position: relative;
   }
 
   .logo {
@@ -491,12 +490,31 @@ body.portfolio-page {
     margin: 10px auto;
   }
 
-  .navbar ul {
-    justify-content: center;
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 25px;
   }
 
-  .navbar li {
-    margin: 5px 10px;
+  .nav-left,
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .navbar.active .nav-left,
+  .navbar.active .nav-right {
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
   }
 }
 
