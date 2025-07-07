@@ -13,34 +13,23 @@ body {
   line-height: 1.6;
 }
 
-/* ====== NAVBAR ====== */
-header {
-  background-color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-
+/* === NAVBAR === */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 40px;
-  position: relative;
 }
 
 .nav-left,
 .nav-right {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 30px;
 }
-
-.nav-left { justify-content: flex-start; }
-.nav-right { justify-content: flex-end; }
 
 .logo {
   position: absolute;
@@ -48,18 +37,21 @@ header {
   transform: translateX(-50%);
   font-size: 1.8rem;
   font-weight: bold;
+  text-decoration: none;
   color: #333;
 }
 
-.navbar a {
+/* Nav link styling */
+.nav-left a,
+.nav-right a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   position: relative;
-  transition: color 0.3s ease;
 }
 
-.navbar a::after {
+.nav-left a::after,
+.nav-right a::after {
   content: "";
   position: absolute;
   width: 0;
@@ -70,12 +62,32 @@ header {
   transition: width 0.3s ease;
 }
 
-.navbar a:hover::after {
+.nav-left a:hover::after,
+.nav-right a:hover::after {
   width: 100%;
 }
 
-.navbar a:hover {
+.nav-left a:hover,
+.nav-right a:hover {
   color: #000;
+}
+
+/* === NAVBAR DARK THEME === */
+body.portfolio-page .navbar a,
+body.portfolio-page .logo {
+  color: #D2B48C;
+}
+
+body.portfolio-page .navbar a::after {
+  background-color: #D2B48C;
+}
+
+body.portfolio-page .navbar a:hover {
+  color: #fff;
+}
+
+body.portfolio-page .navbar a:hover::after {
+  background-color: #fff;
 }
 
 /* ====== HERO SECTION ====== */
@@ -478,29 +490,24 @@ body.portfolio-page {
     text-align: center;
   }
 
-  .navbar {
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .logo {
-    margin: 0 auto;
-  }
-
   .hamburger {
-    display: block; /* show hamburger */
+    display: block;
+    position: relative;
+    z-index: 1001; /* on top */
   }
 
   .nav-left,
   .nav-right {
-    display: none; /* hide links by default */
     flex-direction: column;
+    align-items: center;
     background: #fff;
     position: absolute;
-    top: 60px; /* adjust for header height */
+    top: 60px; /* adjust for your header height */
     left: 0;
     width: 100%;
-    padding: 20px;
+    display: none;
+    padding: 20px 0;
+    gap: 20px;
   }
 
   .navbar.active .nav-left,
@@ -508,8 +515,11 @@ body.portfolio-page {
     display: flex;
   }
 
-  .navbar ul li {
-    margin: 10px 0;
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1002;
   }
 }
 
