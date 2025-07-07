@@ -484,16 +484,54 @@ body.portfolio-page {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
+  /* Stack your editorial sections vertically */
   .editorial-content,
   .editorial.reverse .editorial-content {
     flex-direction: column;
     text-align: center;
   }
 
+  /* Make visual blocks flexible and full width */
+  .editorial-visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Images, videos, iframes inside visuals */
+  .editorial-visual img,
+  .editorial-visual video,
+  .editorial-visual iframe {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Swiper containers should not collapse */
+  .swiper-wrapper-ratio {
+    width: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* If you have a portfolio grid anywhere, make it 1 column */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Navbar: show hamburger, stack nav links */
   .hamburger {
     display: block;
     position: relative;
-    z-index: 1001; /* on top */
+    z-index: 1001;
   }
 
   .nav-left,
@@ -515,6 +553,7 @@ body.portfolio-page {
     display: flex;
   }
 
+  /* Keep logo in middle on mobile */
   .logo {
     position: absolute;
     left: 50%;
