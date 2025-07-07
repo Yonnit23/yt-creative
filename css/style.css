@@ -530,22 +530,25 @@ body.portfolio-page {
   /* Navbar: show hamburger, stack nav links */
   .hamburger {
     display: block;
+    font-size: 2rem;
     position: relative;
-    z-index: 1001;
+    z-index: 1001; /* stays on top */
+    cursor: pointer;
   }
 
   .nav-left,
   .nav-right {
     flex-direction: column;
     align-items: center;
-    background: #fff;
     position: absolute;
-    top: 60px; /* adjust for your header height */
+    background: #fff; /* or dark if needed */
+    top: 60px; /* adjust for header height */
     left: 0;
     width: 100%;
     display: none;
     padding: 20px 0;
     gap: 20px;
+    z-index: 1000;
   }
 
   .navbar.active .nav-left,
