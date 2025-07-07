@@ -10,17 +10,18 @@
 <body class="service-page">
   <header>
     <nav class="navbar">
-      <ul class="nav-left">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <div class="logo">YT</div>
-      <ul class="nav-right">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="connect.html">Connect</a></li>
-      </ul>
-    </nav>
+  <div class="hamburger">&#9776;</div>
+  <ul class="nav-left">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="logo">YT</div>
+  <ul class="nav-right">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</nav>
   </header>
 
   <main>
@@ -84,5 +85,15 @@
   <footer>
     <p>&copy; Yonni Tompkins | <a href="privacy.html">Privacy Policy</a></p>
   </footer>
+
+  <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navbar = document.querySelector('.navbar');
+
+  hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
