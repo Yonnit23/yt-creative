@@ -11,20 +11,20 @@
 <body>
     <header>
         <nav class="navbar">
-  <div class="hamburger">&#9776;</div>
   <ul class="nav-left">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <div class="logo">YT</div>
+
+  <a href="index.html" class="logo">YT</a>
+
   <ul class="nav-right">
     <li><a href="services.html">Services</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="connect.html">Connect</a></li>
   </ul>
 </nav>
-
-    </header>
+        </header>
 
     <main>
         <section class="hero">
@@ -65,10 +65,10 @@
 
     <script>
   const hamburger = document.querySelector('.hamburger');
-  const navbar = document.querySelector('.navbar');
+  const navMenu = document.querySelector('.nav-menu');
 
   hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+    navMenu.classList.toggle('active');
   });
 </script>
 
