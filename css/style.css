@@ -471,6 +471,33 @@ body.portfolio-page {
     flex-direction: column;
     text-align: center;
   }
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 20px 20px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex: unset;
+    width: 100%;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    margin: 10px auto;
+  }
+
+  .navbar ul {
+    justify-content: center;
+  }
+
+  .navbar li {
+    margin: 5px 10px;
+  }
 }
 
 /* ====== CONNECT PAGE ====== */
