@@ -37,7 +37,6 @@ header {
   list-style: none;
   display: flex;
   gap: 30px;
-  flex: 1;
 }
 
 .nav-left { justify-content: flex-start; }
@@ -466,8 +465,8 @@ body.portfolio-page {
 
 /* Hide hamburger on desktop */
 .hamburger {
-  display: none;
-  font-size: 28px;
+  display: none; /* hidden on desktop */
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -485,9 +484,7 @@ body.portfolio-page {
   }
 
   .logo {
-    position: static;
-    transform: none;
-    margin: 10px auto;
+    margin: 0 auto;
   }
 
   .hamburger {
@@ -499,13 +496,14 @@ body.portfolio-page {
 
   .nav-left,
   .nav-right {
-    display: none;
+    display: none; /* hide links by default */
     flex-direction: column;
     background: #fff;
+    position: absolute;
+    top: 60px; /* adjust for header height */
+    left: 0;
     width: 100%;
-    text-align: center;
-    margin: 0;
-    padding: 10px 0;
+    padding: 20px;
   }
 
   .navbar.active .nav-left,
